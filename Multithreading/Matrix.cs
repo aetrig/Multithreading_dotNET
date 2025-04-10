@@ -52,29 +52,6 @@ public class Matrix
 		return output;
 	}
 
-	public Matrix MultiplyNonThreaded(Matrix m2)
-	{
-		Matrix result = new(rowsCount, m2.colsCount, -1);
-		//Matrixes aren't multipliable
-		if (colsCount != m2.rowsCount)
-		{
-			return new(0);
-		}
-
-		for (int row = 0; row < rowsCount; row++)
-		{
-			for (int col = 0; col < m2.colsCount; col++)
-			{
-				int value = 0;
-				for (int i = 0; i < colsCount; i++)
-				{
-					value += values[row, i] * m2.values[i, col];
-				}
-				result.values[row, col] = value;
-			}
-		}
-		return result;
-	}
 	public Matrix MultiplyParallel(Matrix m2, int maxThreads)
 	{
 		Matrix result = new(rowsCount, m2.colsCount, -1);
@@ -97,6 +74,18 @@ public class Matrix
 			}
 		});
 
+		return result;
+	}
+
+	public Matrix MultiplyThreads(Matrix m2, int maxThreads)
+	{
+		Matrix result = new(rowsCount, m2.colsCount, -1);
+		//Matrixes aren't multipliable
+		if (colsCount != m2.rowsCount)
+		{
+			return new(0);
+		}
+		
 		return result;
 	}
 }

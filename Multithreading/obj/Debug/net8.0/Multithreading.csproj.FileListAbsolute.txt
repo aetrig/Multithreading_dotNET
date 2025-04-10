@@ -12,3 +12,4 @@ c:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\obj\Debug\net8.0\refint\
 c:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\obj\Debug\net8.0\Multithreading.pdb
 c:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\obj\Debug\net8.0\Multithreading.genruntimeconfig.cache
 c:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\obj\Debug\net8.0\ref\Multithreading.dll
+C:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\obj\Debug\net8.0\Multithreading.sourcelink.json
