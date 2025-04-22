@@ -6,29 +6,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        Matrix m1 = new(1000, -1, 10);
-        Matrix m2 = new(1000);
+        Matrix m1 = new(1000, 901, 10);
+        Matrix m2 = new(900, 700);
         Stopwatch stopwatch = new();
-        Matrix m3 = new(0);
         
+        MatrixMultiplier mult = new(m1, m2);
+
         stopwatch.Start();
-        m3 = m1.MultiplyParallel(m2, 1);
+        mult.MultiplyParallel(1);
         stopwatch.Stop();
-        Console.WriteLine($"1 time: {stopwatch.Elapsed}");
+        Console.WriteLine($"1 thread time: {stopwatch.Elapsed}");
 
         stopwatch.Restart();
-        m3 = m1.MultiplyParallel(m2, 3);
+        mult.MultiplyParallel(3);
         stopwatch.Stop();
-        Console.WriteLine($"3 time: {stopwatch.Elapsed}");
+        Console.WriteLine($"3 thread time: {stopwatch.Elapsed}");
 
         stopwatch.Restart();
-        m3 = m1.MultiplyParallel(m2, 6);
+        mult.MultiplyParallel(6);
         stopwatch.Stop();
-        Console.WriteLine($"6 time: {stopwatch.Elapsed}");
+        Console.WriteLine($"6 thread time: {stopwatch.Elapsed}");
 
         stopwatch.Restart();
-        m3 = m1.MultiplyParallel(m2, 100);
+        mult.MultiplyParallel(100);
         stopwatch.Stop();
-        Console.WriteLine($"100 time: {stopwatch.Elapsed}");
+        Console.WriteLine($"100 thread time: {stopwatch.Elapsed}");
     }
 }

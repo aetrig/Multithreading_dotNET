@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
+      "projectUniqueName": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\Multithreading\\Multithreading.csproj",
       "projectName": "Multithreading",
-      "projectPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
+      "projectPath": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\Multithreading\\Multithreading.csproj",
       "packagesPath": "C:\\Users\\goszt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\obj\\",
+      "outputPath": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\Multithreading\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\goszt\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

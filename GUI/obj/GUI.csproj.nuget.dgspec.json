@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\GUI.csproj": {}
+    "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\GUI\\GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\GUI.csproj": {
+    "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\GUI\\GUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\GUI.csproj",
+        "projectUniqueName": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\GUI\\GUI.csproj",
         "projectName": "GUI",
-        "projectPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\GUI.csproj",
+        "projectPath": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\GUI\\GUI.csproj",
         "packagesPath": "C:\\Users\\goszt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\obj\\",
+        "outputPath": "C:\\Users\\goszt\\Desktop\\Szkoła\\.NET\\Lab3\\Multithreading_dotNET\\GUI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -75,7 +75,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.14, )",
+              "version": "[8.0.15, )",
               "autoReferenced": true
             }
           },
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
@@ -118,7 +118,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.14, )",
+              "version": "[8.0.15, )",
               "autoReferenced": true
             }
           },
@@ -141,7 +141,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
@@ -161,7 +161,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.14, )",
+              "version": "[8.0.15, )",
               "autoReferenced": true
             }
           },
@@ -185,7 +185,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
@@ -228,7 +228,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

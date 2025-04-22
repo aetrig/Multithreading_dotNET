@@ -2,7 +2,7 @@
 
 namespace Multithreading;
 
-public class Matrix
+internal class Matrix
 {
 	public int rowsCount { get; }
 	public int colsCount { get; }
@@ -50,42 +50,5 @@ public class Matrix
 			output += "\n";
 		}
 		return output;
-	}
-
-	public Matrix MultiplyParallel(Matrix m2, int maxThreads)
-	{
-		Matrix result = new(rowsCount, m2.colsCount, -1);
-		//Matrixes aren't multipliable
-		if (colsCount != m2.rowsCount)
-		{
-			return new(0);
-		}
-		ParallelOptions options = new() { MaxDegreeOfParallelism = maxThreads};
-		Parallel.For(0, rowsCount, options, row =>
-		{
-			for (int col = 0; col < m2.colsCount; col++)
-			{
-				int value = 0;
-				for (int i = 0; i < colsCount; i++)
-				{
-					value += values[row, i] * m2.values[i, col];
-				}
-				result.values[row, col] = value;
-			}
-		});
-
-		return result;
-	}
-
-	public Matrix MultiplyThreads(Matrix m2, int maxThreads)
-	{
-		Matrix result = new(rowsCount, m2.colsCount, -1);
-		//Matrixes aren't multipliable
-		if (colsCount != m2.rowsCount)
-		{
-			return new(0);
-		}
-		
-		return result;
 	}
 }
