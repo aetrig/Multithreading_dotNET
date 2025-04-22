@@ -6,8 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Matrix m1 = new(1000, -1, 10);
-        Matrix m2 = new(1000, -1);
+        Matrix m1 = new(1, 1000, 10);
+        Matrix m2 = new(1000, 1);
         Stopwatch stopwatch = new();
         
         MatrixMultiplier mult = new(m1, m2);
@@ -35,6 +35,11 @@ class Program
         //Console.WriteLine(mult.result);
 
         stopwatch.Restart();
+        mult.MultiplyParallel(12);
+        stopwatch.Stop();
+        Console.WriteLine($"12 thread time: {stopwatch.Elapsed}");
+
+        stopwatch.Restart();
         mult.MultiplyParallel(100);
         stopwatch.Stop();
         Console.WriteLine($"100 thread time: {stopwatch.Elapsed}");
@@ -58,6 +63,11 @@ class Program
         stopwatch.Stop();
         Console.WriteLine($"6 thread time: {stopwatch.Elapsed}");
         //Console.WriteLine(mult.result);
+
+        stopwatch.Restart();
+        mult.MultiplyThreads(12);
+        stopwatch.Stop();
+        Console.WriteLine($"12 thread time: {stopwatch.Elapsed}");
 
         stopwatch.Restart();
         mult.MultiplyThreads(100);
