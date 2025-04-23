@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Multithreading
-build_property.ProjectDir = c:\Users\goszt\Desktop\Szkoła\.NET\Lab3\Multithreading_dotNET\Multithreading\
+build_property.ProjectDir = C:\Users\goszt\Desktop\projects\NET\Lab3\Multithreading\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

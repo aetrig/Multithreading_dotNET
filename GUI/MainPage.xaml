@@ -22,54 +22,62 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions> -->
         <Image
+            x:Name="MainImage"
             Margin="10.0,10.0,70.0,10.0"
             Grid.Column="0"
             Grid.Row="0"
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
-            Source="aurora_pfp4.jpg"
+            Source="Null"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
         <Image
+            x:Name="TopLeftImage"
             Grid.Column="2"
             Grid.Row="0"
-            Source="aurora_pfp4.jpg"
+            Source="Null"
             HorizontalOptions="Center"
-            VerticalOptions="Center" />
+            VerticalOptions="Center" >
+        </Image>
         <Image
+            x:Name="TopRightImage"
             Grid.Column="3"
             Grid.Row="0"
-            Source="aurora_pfp4.jpg"
+            Source="Null"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
         <Image
+            x:Name="BottomLeftImage"
             Grid.Column="2"
             Grid.Row="1"
-            Source="aurora_pfp4.jpg"
+            Source="Null"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
         <Image
+            x:Name="BottomRightImage"
             Grid.Column="3"
             Grid.Row="1"
-            Source="aurora_pfp4.jpg"
+            Source="Null"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
         <Button
-            Margin="70.0,0,140.0,50.0"
-            Padding="50,20,50,20"
+            x:Name="FileBtn"
+            Margin="70.0,0,140.0,20.0"
             Grid.Column="0"
             Grid.Row="2"
             Text="Select File"
             HorizontalOptions="Center"
-            VerticalOptions="Center" />
+            VerticalOptions="Center"
+            Clicked="FileSelectClicked" />
         <Button
-            Margin="10.0,0,140.0,50.0"
-            Padding="50,20,50,20"
+            x:Name="ProcessBtn"
+            Margin="10.0,0,140.0,20.0"
             Grid.Column="1"
             Grid.Row="2"
             Text="Process"
             HorizontalOptions="Center"
-            VerticalOptions="Center" />
+            VerticalOptions="Center"
+            Clicked="ProcessClicked" />
     </Grid>
 
 </ContentPage>
