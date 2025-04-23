@@ -10,11 +10,11 @@
 			"request": "launch",
 			"preLaunchTask": "maui: Build"
 		},
-		// {
-		// 	"name": "C#: Multithreading Debug",
-		// 	"type": "dotnet",
-		// 	"request": "launch",
-		// 	"projectPath": "${workspaceFolder}/Multithreading/Multithreading.csproj"
-		// }
+		{
+			"name": "C#: Multithreading Debug",
+			"type": "dotnet",
+			"request": "launch",
+			"projectPath": "${workspaceFolder}/Multithreading/Multithreading.csproj"
+		}
 	]
 }
