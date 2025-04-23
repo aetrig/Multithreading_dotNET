@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj": {}
+    "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj": {}
   },
   "projects": {
-    "c:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj": {
+    "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
+        "projectUniqueName": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
         "projectName": "Multithreading",
-        "projectPath": "c:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
+        "projectPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\Multithreading.csproj",
         "packagesPath": "C:\\Users\\goszt\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\obj\\",
+        "outputPath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\Multithreading\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\goszt\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -57,14 +57,20 @@ public partial class MainPage : ContentPage
 
 			//stream.Flush();
 
-			imageToProcess.Save(tempFile);
-			var image = ImageSource.FromFile("temp.jpg");
-			TopLeftImage.Source = image;
-			;
+			// imageToProcess.Save(tempFile);
+			// using (MemoryStream stream = File.Open(tempFile))
+			// {
+			// 	var image = ImageSource.FromStream(() => stream.AsRandomAccessStream());
+			// 	TopLeftImage.Source = image;
+			// 	stream.Flush();
+			// }
+			// File.Delete(tempFile);
+			MemoryStream stream = new();
+			imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
 			// stream.Flush();
 			// imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-			// TopRightImage.Source = ImageSource.FromStream(() => stream);
-
+			var image = Image.FromStream(stream);
+			TopRightImage.Source = ImageSource.FromResource(image);
 			// stream.Flush();
 			// imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
 			// BottomLeftImage.Source = ImageSource.FromStream(() => stream);
