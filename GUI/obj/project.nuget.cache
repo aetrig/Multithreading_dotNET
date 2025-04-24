@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0eU8W/CdGGQ=",
+  "dgSpecHash": "B3nBv4CuLNc=",
   "success": true,
   "projectFilePath": "C:\\Users\\goszt\\Desktop\\projects\\NET\\Lab3\\GUI\\GUI.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,11 @@
     "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.nativeassets.ios\\3.116.1\\skiasharp.nativeassets.ios.3.116.1.nupkg.sha512",
     "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.nativeassets.maccatalyst\\3.116.1\\skiasharp.nativeassets.maccatalyst.3.116.1.nupkg.sha512",
     "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.116.1\\skiasharp.nativeassets.win32.3.116.1.nupkg.sha512",
+    "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.nativeassets.winui\\3.116.1\\skiasharp.nativeassets.winui.3.116.1.nupkg.sha512",
+    "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.views\\3.116.1\\skiasharp.views.3.116.1.nupkg.sha512",
+    "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.views.maui.controls\\3.116.1\\skiasharp.views.maui.controls.3.116.1.nupkg.sha512",
+    "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.views.maui.core\\3.116.1\\skiasharp.views.maui.core.3.116.1.nupkg.sha512",
+    "C:\\Users\\goszt\\.nuget\\packages\\skiasharp.views.winui\\3.116.1\\skiasharp.views.winui.3.116.1.nupkg.sha512",
     "C:\\Users\\goszt\\.nuget\\packages\\system.drawing.common\\8.0.15\\system.drawing.common.8.0.15.nupkg.sha512",
     "C:\\Users\\goszt\\.nuget\\packages\\xamarin.android.glide\\4.15.1.2\\xamarin.android.glide.4.15.1.2.nupkg.sha512",
     "C:\\Users\\goszt\\.nuget\\packages\\xamarin.android.glide.annotations\\4.15.1.2\\xamarin.android.glide.annotations.4.15.1.2.nupkg.sha512",

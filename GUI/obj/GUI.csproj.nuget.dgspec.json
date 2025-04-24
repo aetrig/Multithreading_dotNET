@@ -82,6 +82,10 @@
               "target": "Package",
               "version": "[3.116.1, )"
             },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[3.116.1, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[8.0.15, )"
@@ -130,6 +134,10 @@
               "autoReferenced": true
             },
             "SkiaSharp": {
+              "target": "Package",
+              "version": "[3.116.1, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.116.1, )"
             },
@@ -184,6 +192,10 @@
               "target": "Package",
               "version": "[3.116.1, )"
             },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[3.116.1, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[8.0.15, )"
@@ -227,6 +239,10 @@
               "version": "[8.0.100, )"
             },
             "SkiaSharp": {
+              "target": "Package",
+              "version": "[3.116.1, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.116.1, )"
             },

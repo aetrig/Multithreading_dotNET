@@ -3,15 +3,19 @@ using System.Drawing;
 
 using System;
 using System.Drawing.Imaging;
+using SkiaSharp.Views.Maui.Controls;
+using SkiaSharp;
 
 [System.Runtime.Versioning.SupportedOSPlatform("windows")]
 public partial class MainPage : ContentPage
 {
 
-	Bitmap? imageToProcess;
+	//Bitmap? imageToProcess;
+	SKBitmap img;
 	public MainPage()
 	{
 		InitializeComponent();
+		img = new();
 	}
 
 	
@@ -32,7 +36,15 @@ public partial class MainPage : ContentPage
 				TopRightImage.Source = null;
 				BottomLeftImage.Source = null;
 				BottomRightImage.Source = null;
-				imageToProcess = new Bitmap(result.FullPath);
+				// imageToProcess = new Bitmap(result.FullPath);
+				// img = new(result.FullPath);
+				//SKImageInfo imgInfo = new();
+				//SKBitmap.Decode(result.FullPath, imgInfo);
+				img = SKBitmap.Decode(result.FullPath);
+				// Console.WriteLine("...");
+				// SKBitmapImageSource test = (SKBitmapImageSource) image;
+				// Console.WriteLine("---");
+				Console.WriteLine(img.IsEmpty);
 			}
 		}
 		catch
@@ -42,43 +54,18 @@ public partial class MainPage : ContentPage
 	private void ProcessClicked(object sender, EventArgs e)
 	{
 		Console.WriteLine("Process button pressed");
-		TopLeftImage.Source = null;
-		TopRightImage.Source = null;
-		BottomLeftImage.Source = null;
-		BottomRightImage.Source = null;
+		// TopLeftImage.Source = null;
+		// TopRightImage.Source = null;
+		// BottomLeftImage.Source = null;
+		// BottomRightImage.Source = null;
 
-		if (imageToProcess != null)
-		{
-			string tempFile = "GUI/Resources/Images/temp.jpg";
-			if (File.Exists(tempFile))
-			{
-				File.Delete(tempFile);
-			}
+		SKBitmapImageSource source = img;
+		//source.Bitmap = img;
 
-			//stream.Flush();
-
-			// imageToProcess.Save(tempFile);
-			// using (MemoryStream stream = File.Open(tempFile))
-			// {
-			// 	var image = ImageSource.FromStream(() => stream.AsRandomAccessStream());
-			// 	TopLeftImage.Source = image;
-			// 	stream.Flush();
-			// }
-			// File.Delete(tempFile);
-			MemoryStream stream = new();
-			imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-			// stream.Flush();
-			// imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-			var image = Image.FromStream(stream);
-			TopRightImage.Source = ImageSource.FromResource(image);
-			// stream.Flush();
-			// imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-			// BottomLeftImage.Source = ImageSource.FromStream(() => stream);
-
-			// stream.Flush();
-			// imageToProcess.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-			// BottomRightImage.Source = ImageSource.FromStream(() => stream);
-		}
+		TopLeftImage.Source = (ImageSource) source;
+		TopRightImage.Source = (ImageSource) source;
+		BottomLeftImage.Source = (ImageSource) source;
+		BottomRightImage.Source = (ImageSource) source;
 
 	}
 }
