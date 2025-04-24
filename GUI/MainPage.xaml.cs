@@ -1,16 +1,12 @@
 ﻿namespace GUI;
-using System.Drawing;
 
 using System;
-using System.Drawing.Imaging;
 using SkiaSharp.Views.Maui.Controls;
 using SkiaSharp;
 
-[System.Runtime.Versioning.SupportedOSPlatform("windows")]
 public partial class MainPage : ContentPage
 {
 
-	//Bitmap? imageToProcess;
 	SKBitmap img;
 	public MainPage()
 	{
@@ -47,10 +43,6 @@ public partial class MainPage : ContentPage
 	private void ProcessClicked(object sender, EventArgs e)
 	{
 		Console.WriteLine("Process button pressed");
-		// TopLeftImage.Source = null;
-		// TopRightImage.Source = null;
-		// BottomLeftImage.Source = null;
-		// BottomRightImage.Source = null;
 
 		SKBitmap negative = img.Copy();
 		SKBitmap grayScale = img.Copy();
@@ -81,8 +73,6 @@ public partial class MainPage : ContentPage
 				grayScale.SetPixel(x, y, color);
 			}
 		}
-
-
 
 		TopLeftImage.Source = (SKBitmapImageSource) negative;
 		TopRightImage.Source =  (SKBitmapImageSource) gaussianBlur;
