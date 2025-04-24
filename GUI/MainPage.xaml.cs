@@ -44,41 +44,50 @@ public partial class MainPage : ContentPage
 	{
 		Console.WriteLine("Process button pressed");
 
-		SKBitmap negative = img.Copy();
-		SKBitmap grayScale = img.Copy();
-		SKBitmap gaussianBlur = img.Copy();
-		SKBitmap edges = img.Copy();
+		ImageProcessor imageProcessor = new(img);
+		// imageProcessor.Negative();
+		// imageProcessor.GrayScale();
+		// imageProcessor.GaussianBlur();
+		// imageProcessor.LaplaceFilter();
 
-		for (int x = 0; x < negative.Width; x++)
-		{
-			for (int y = 0; y < negative.Height; y++)
+		ParallelOptions options = new() { MaxDegreeOfParallelism = 4 };
+		Parallel.For(0, 4, options, operation => {
+			if (operation == 0)
 			{
-				var color = negative.GetPixel(x,y);
-				color = color.WithRed((byte) (Byte.MaxValue - color.Red));
-				color = color.WithGreen((byte) (Byte.MaxValue - color.Green));
-				color = color.WithBlue((byte)(Byte.MaxValue - color.Blue));
-				negative.SetPixel(x,y,color);
+				imageProcessor.Negative();
+				MainThread.InvokeOnMainThreadAsync(() => {
+					TopLeftImage.Source = (SKBitmapImageSource)imageProcessor.negative;
+				});
 			}
-		}
-
-		for (int x = 0; x < grayScale.Width; x++)
-		{
-			for (int y = 0; y < grayScale.Height; y++)
+			if (operation == 1)
 			{
-				var color = grayScale.GetPixel(x, y);
-				var average = (color.Red + color.Green + color.Blue)/3;
-				color = color.WithRed((byte)(average));
-				color = color.WithGreen((byte)(average));
-				color = color.WithBlue((byte)(average));
-				grayScale.SetPixel(x, y, color);
+				imageProcessor.GrayScale();
+				MainThread.InvokeOnMainThreadAsync(() => {
+					BottomLeftImage.Source = (SKBitmapImageSource)imageProcessor.grayScale;
+				});
 			}
-		}
+			if (operation == 2)
+			{
+				imageProcessor.GaussianBlur();
+				MainThread.InvokeOnMainThreadAsync(() =>
+				{
+					TopRightImage.Source = (SKBitmapImageSource)imageProcessor.gaussianBlur;
+				});
+			}
+			if (operation == 3)
+			{
+				imageProcessor.LaplaceFilter();
+				MainThread.InvokeOnMainThreadAsync(() =>
+				{
+					BottomRightImage.Source = (SKBitmapImageSource)imageProcessor.laplaceFilter;
+				});
+			}
+		});
 
-		TopLeftImage.Source = (SKBitmapImageSource) negative;
-		TopRightImage.Source =  (SKBitmapImageSource) gaussianBlur;
-		BottomLeftImage.Source =  (SKBitmapImageSource) grayScale;
-		BottomRightImage.Source =  (SKBitmapImageSource) edges;
+		// TopLeftImage.Source = (SKBitmapImageSource)imageProcessor.negative;
+		// TopRightImage.Source =  (SKBitmapImageSource) imageProcessor.gaussianBlur;
+		// BottomLeftImage.Source =  (SKBitmapImageSource) imageProcessor.grayScale;
+		// BottomRightImage.Source =  (SKBitmapImageSource) imageProcessor.laplaceFilter;
 
 	}
 }
-
