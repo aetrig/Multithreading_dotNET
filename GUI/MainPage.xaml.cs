@@ -30,21 +30,14 @@ public partial class MainPage : ContentPage
 			if (result != null)
 			{
 				var stream = await result.OpenReadAsync();
-				var image = ImageSource.FromStream(() => stream);
-				MainImage.Source = image;
+				var imageSource = ImageSource.FromStream(() => stream);
+				MainImage.Source = imageSource;
 				TopLeftImage.Source = null;
 				TopRightImage.Source = null;
 				BottomLeftImage.Source = null;
 				BottomRightImage.Source = null;
-				// imageToProcess = new Bitmap(result.FullPath);
-				// img = new(result.FullPath);
-				//SKImageInfo imgInfo = new();
-				//SKBitmap.Decode(result.FullPath, imgInfo);
+
 				img = SKBitmap.Decode(result.FullPath);
-				// Console.WriteLine("...");
-				// SKBitmapImageSource test = (SKBitmapImageSource) image;
-				// Console.WriteLine("---");
-				Console.WriteLine(img.IsEmpty);
 			}
 		}
 		catch
@@ -59,13 +52,25 @@ public partial class MainPage : ContentPage
 		// BottomLeftImage.Source = null;
 		// BottomRightImage.Source = null;
 
+		for (int x = 0; x < img.Width; x++)
+		{
+			for (int y = 0; y < img.Height; y++)
+			{
+				var color = img.GetPixel(x,y);
+				color = color.WithRed((byte) (Byte.MaxValue - color.Red));
+				color = color.WithGreen((byte) (Byte.MaxValue - color.Green));
+				color = color.WithBlue((byte)(Byte.MaxValue - color.Blue));
+				img.SetPixel(x,y,color);
+			}
+		}
+
 		SKBitmapImageSource source = img;
 		//source.Bitmap = img;
 
-		TopLeftImage.Source = (ImageSource) source;
-		TopRightImage.Source = (ImageSource) source;
-		BottomLeftImage.Source = (ImageSource) source;
-		BottomRightImage.Source = (ImageSource) source;
+		TopLeftImage.Source = source;
+		TopRightImage.Source =  source;
+		BottomLeftImage.Source =  source;
+		BottomRightImage.Source =  source;
 
 	}
 }
