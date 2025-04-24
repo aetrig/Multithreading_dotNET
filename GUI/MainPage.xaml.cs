@@ -52,25 +52,42 @@ public partial class MainPage : ContentPage
 		// BottomLeftImage.Source = null;
 		// BottomRightImage.Source = null;
 
-		for (int x = 0; x < img.Width; x++)
+		SKBitmap negative = img.Copy();
+		SKBitmap grayScale = img.Copy();
+		SKBitmap gaussianBlur = img.Copy();
+		SKBitmap edges = img.Copy();
+
+		for (int x = 0; x < negative.Width; x++)
 		{
-			for (int y = 0; y < img.Height; y++)
+			for (int y = 0; y < negative.Height; y++)
 			{
-				var color = img.GetPixel(x,y);
+				var color = negative.GetPixel(x,y);
 				color = color.WithRed((byte) (Byte.MaxValue - color.Red));
 				color = color.WithGreen((byte) (Byte.MaxValue - color.Green));
 				color = color.WithBlue((byte)(Byte.MaxValue - color.Blue));
-				img.SetPixel(x,y,color);
+				negative.SetPixel(x,y,color);
 			}
 		}
 
-		SKBitmapImageSource source = img;
-		//source.Bitmap = img;
+		for (int x = 0; x < grayScale.Width; x++)
+		{
+			for (int y = 0; y < grayScale.Height; y++)
+			{
+				var color = grayScale.GetPixel(x, y);
+				var average = (color.Red + color.Green + color.Blue)/3;
+				color = color.WithRed((byte)(average));
+				color = color.WithGreen((byte)(average));
+				color = color.WithBlue((byte)(average));
+				grayScale.SetPixel(x, y, color);
+			}
+		}
 
-		TopLeftImage.Source = source;
-		TopRightImage.Source =  source;
-		BottomLeftImage.Source =  source;
-		BottomRightImage.Source =  source;
+
+
+		TopLeftImage.Source = (SKBitmapImageSource) negative;
+		TopRightImage.Source =  (SKBitmapImageSource) gaussianBlur;
+		BottomLeftImage.Source =  (SKBitmapImageSource) grayScale;
+		BottomRightImage.Source =  (SKBitmapImageSource) edges;
 
 	}
 }
