@@ -45,10 +45,6 @@ public partial class MainPage : ContentPage
 		Console.WriteLine("Process button pressed");
 
 		ImageProcessor imageProcessor = new(img);
-		// imageProcessor.Negative();
-		// imageProcessor.GrayScale();
-		// imageProcessor.GaussianBlur();
-		// imageProcessor.LaplaceFilter();
 
 		ParallelOptions options = new() { MaxDegreeOfParallelism = 4 };
 		Parallel.For(0, 4, options, operation => {
@@ -83,11 +79,6 @@ public partial class MainPage : ContentPage
 				});
 			}
 		});
-
-		// TopLeftImage.Source = (SKBitmapImageSource)imageProcessor.negative;
-		// TopRightImage.Source =  (SKBitmapImageSource) imageProcessor.gaussianBlur;
-		// BottomLeftImage.Source =  (SKBitmapImageSource) imageProcessor.grayScale;
-		// BottomRightImage.Source =  (SKBitmapImageSource) imageProcessor.laplaceFilter;
 
 	}
 }

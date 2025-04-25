@@ -6,8 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Matrix m1 = new(1000, 1000, 10);
-        Matrix m2 = new(1000, 1000);
+        Matrix m1 = new(200, 200, 10);
+        Matrix m2 = new(200, 200);
         Stopwatch stopwatch = new();
         
         MatrixMultiplier mult = new(m1, m2);
@@ -40,13 +40,6 @@ class Program
         Console.WriteLine($"12 thread time: {stopwatch.Elapsed}");
         // Console.WriteLine(mult.result);
 
-        stopwatch.Restart();
-        mult.MultiplyParallel(100);
-        stopwatch.Stop();
-        Console.WriteLine($"100 thread time: {stopwatch.Elapsed}");
-        //Console.WriteLine(mult.result);
-
-
 
 
         Console.WriteLine(" =========== Threads ===========");
@@ -74,10 +67,5 @@ class Program
         Console.WriteLine($"12 thread time: {stopwatch.Elapsed}");
         // Console.WriteLine(mult.result);
 
-        stopwatch.Restart();
-        mult.MultiplyThreads(100);
-        stopwatch.Stop();
-        Console.WriteLine($"100 thread time: {stopwatch.Elapsed}");
-        // Console.WriteLine(mult.result);
     }
 }

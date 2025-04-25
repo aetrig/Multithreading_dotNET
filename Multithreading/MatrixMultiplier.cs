@@ -56,36 +56,6 @@ internal class MatrixMultiplier
 		});
 	}
 
-	public void MultiplyThreadsOld(int threadsCount)
-	{
-		_result = new(m1.rowsCount, m2.colsCount, -1);
-
-		//Matrixes aren't multipliable
-		if (m1.colsCount != m2.rowsCount)
-		{
-			Console.WriteLine("Not multipliable");
-			return;
-		}
-
-		Thread[] threads = new Thread[threadsCount];
-		//int row = 0;
-		for (int row = 0; row < m1.rowsCount; row += threadsCount)
-		{
-			int i = 0;
-			while (i < threadsCount && row < m1.rowsCount)
-			{
-				threads[i] = new Thread(new ParameterizedThreadStart(calculateRow));
-				threads[i].Start(row);
-				row++;
-				i++;
-			}
-			for (int n = 0; n < i; n++)
-			{
-				threads[n].Join();
-			}
-		}
-	}
-
 	public void MultiplyThreads(int threadCount)
 	{
 		_result = new(m1.rowsCount, m2.colsCount, -1);
@@ -106,20 +76,6 @@ internal class MatrixMultiplier
 		for (int n = 0; n < threadCount; n++)
 		{
 			threads[n].Join();
-		}
-	}
-
-	private void calculateRow(object? _row)
-	{
-		int row = (int)(_row ?? 0);
-		for (int col = 0; col < m2.colsCount; col++)
-		{
-			int value = 0;
-			for (int i = 0; i < m1.colsCount; i++)
-			{
-				value += m1.values[row, i] * m2.values[i, col];
-			}
-			_result.values[row, col] = value;
 		}
 	}
 	private void calculateRows(object? _row)
